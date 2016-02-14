@@ -1,0 +1,21 @@
+{
+    "name" : "test-project",
+    "version" : "0.0.1",
+    "devDependencies" : {
+        "mocha" : "^2.4.5"
+    },
+    "dependencies" : {
+        "q" : "^1.4.1",
+        "event-stream" : "^3.3.2"
+    },
+    "scripts" : {
+        "test" : "node_modules/mocha/bin/mocha"
+    },
+    "main" : "index.js",
+    "license" : "MIT",
+    "author" : "hotdog929 <hotdog929@gmail.com>",
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/hotdog929/gulp-template-util.git"
+    }
+}
