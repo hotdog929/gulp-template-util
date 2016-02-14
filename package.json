@@ -1,5 +1,5 @@
 {
-    "name" : "test-project",
+    "name" : "gulp-template-util",
     "version" : "0.0.1",
     "devDependencies" : {
         "mocha" : "^2.4.5"
