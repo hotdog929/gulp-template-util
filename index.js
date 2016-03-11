@@ -4,7 +4,7 @@ var es = require('event-stream');
 function dirPath(path){
     var match = path.trim().match(/^(\/?)(.*?)\/?$/);
     var result = match[1] + match[2]
-    return (result.length == 0) ? result : (result + '/');
+    return (result.length == 0) ? '' : ((result == '/') ? result : (result + '/'));
 }
 
 function filePath(path){
@@ -15,7 +15,7 @@ function filePath(path){
 
 function countPathLayer(path){
     var dPath = dirPath(path);
-    return (dPath.length == 0) ? 0 : (dPath.split('/').length - 2);
+    return (dPath.length == 0) ? 0 : ((dPath == '/') ? 1 : (dPath.split('/').length - 2));
 }
 
 function splitPaths(paths){

@@ -28,41 +28,41 @@ describe('gulp-template-util', function() {
 	it('#dirPath()', function(){
 		assert.equal(util.dirPath('src/main/index'), 'src/main/index/');
 		assert.equal(util.dirPath('src/main/index/'), 'src/main/index/');
-		assert.equal(util.dirPath('/src/main/index'), 'src/main/index/');
-		assert.equal(util.dirPath('/src/main/index/'), 'src/main/index/');
+		assert.equal(util.dirPath('/src/main/index'), '/src/main/index/');
+		assert.equal(util.dirPath('/src/main/index/'), '/src/main/index/');
 		assert.equal(util.dirPath('src'), 'src/');
 		assert.equal(util.dirPath('src/'), 'src/');
-		assert.equal(util.dirPath('/src'), 'src/');
-		assert.equal(util.dirPath('/src/'), 'src/');
-		assert.equal(util.dirPath('/'), '');
+		assert.equal(util.dirPath('/src'), '/src/');
+		assert.equal(util.dirPath('/src/'), '/src/');
+		assert.equal(util.dirPath('/'), '/');
 		assert.equal(util.dirPath(''), '');
 	});
 	it('#filePath()', function(){
 		assert.equal(util.filePath('src/main/index'), 'src/main/index');
 		assert.equal(util.filePath('src/main/index/'), 'src/main/index');
-		assert.equal(util.filePath('/src/main/index'), 'src/main/index');
-		assert.equal(util.filePath('/src/main/index/'), 'src/main/index');
+		assert.equal(util.filePath('/src/main/index'), '/src/main/index');
+		assert.equal(util.filePath('/src/main/index/'), '/src/main/index');
 		assert.equal(util.filePath('src'), 'src');
 		assert.equal(util.filePath('src/'), 'src');
-		assert.equal(util.filePath('/src'), 'src');
-		assert.equal(util.filePath('/src/'), 'src');
-		assert.equal(util.filePath('/'), '');
+		assert.equal(util.filePath('/src'), '/src');
+		assert.equal(util.filePath('/src/'), '/src');
+		assert.equal(util.filePath('/'), '/');
 		assert.equal(util.filePath(''), '');
 	});
 	it('#countPathLayer()', function(){
 		assert.equal(util.countPathLayer('src/main/index'), 2);
 		assert.equal(util.countPathLayer('src/main/index/'), 2);
-		assert.equal(util.countPathLayer('/src/main/index'), 2);
-		assert.equal(util.countPathLayer('/src/main/index/'), 2);
+		assert.equal(util.countPathLayer('/src/main/index'), 3);
+		assert.equal(util.countPathLayer('/src/main/index/'), 3);
 		assert.equal(util.countPathLayer('src/main'), 1);
 		assert.equal(util.countPathLayer('src/main/'), 1);
-		assert.equal(util.countPathLayer('/src/main'), 1);
-		assert.equal(util.countPathLayer('/src/main/'), 1);
+		assert.equal(util.countPathLayer('/src/main'), 2);
+		assert.equal(util.countPathLayer('/src/main/'), 2);
 		assert.equal(util.countPathLayer('src'), 0);
 		assert.equal(util.countPathLayer('src/'), 0);
-		assert.equal(util.countPathLayer('/src'), 0);
-		assert.equal(util.countPathLayer('/src/'), 0);
-		assert.equal(util.countPathLayer('/'), 0);
+		assert.equal(util.countPathLayer('/src'), 1);
+		assert.equal(util.countPathLayer('/src/'), 1);
+		assert.equal(util.countPathLayer('/'), 1);
 		assert.equal(util.countPathLayer(''), 0);
 	});
 	it('#splitPaths()', function(){
