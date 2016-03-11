@@ -2,12 +2,15 @@ var Q = require('q');
 var es = require('event-stream');
 
 function dirPath(path){
-    var result = path.trim().match(/^\/?(.*?)\/?$/)[1];
+    var match = path.trim().match(/^(\/?)(.*?)\/?$/);
+    var result = match[1] + match[2]
     return (result.length == 0) ? result : (result + '/');
 }
 
 function filePath(path){
-    return path.trim().match(/^\/?(.*?)\/?$/)[1];
+    var match = path.trim().match(/^(\/?)(.*?)\/?$/);
+    var result = match[1] + match[2]
+    return match[1] + match[2];
 }
 
 function countPathLayer(path){
